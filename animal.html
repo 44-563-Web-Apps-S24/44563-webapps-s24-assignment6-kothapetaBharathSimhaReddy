@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>
+         Animal Game
+    </title>
+ </head>
+
+<body>
+
+<h2>Animal game by Bharath Simha Redddy Kothapeta</h2>
+
+<form>
+    <label for="secretAnimal">The hidden animal type</label>
+    <input type="password" id="secretAnimal" value="Chicken">
+
+    <label for="guessAnimal">Guess the animal</label>
+    <input type="text" id="guessAnimal">
+
+    <button type="button" onclick="checkAnimal()">Check the guess</button>
+</form>
+
+<p id="resultHolder">Correct: 0 | Wrong: 0</p>
+
+<script>
+    let correct = 0;
+    let wrong = 0;
+
+    function checkAnimal() {
+        const secretAnimal = document.getElementById("secretAnimal").value;
+        const guessedAnimal = document.getElementById("guessAnimal").value;
+     
+        if (secretAnimal.toLowerCase() === guessedAnimal.toLowerCase()) {
+            correct++;
+            alert("Ruff ruff");
+        } else {
+            wrong++;
+            alert("Grrrr");
+        }
+
+        const result = document.getElementById("resultHolder");
+        result.innerHTML = `Correct: ${correct} | Wrong: ${wrong}`;
+    }
+</script>
+
+</body>
+</html>
